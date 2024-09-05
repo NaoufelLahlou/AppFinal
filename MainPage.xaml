@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppFinal.Profil">
+    <StackLayout Padding="10">
+        <Entry x:Name="OldPasswordEntry" Placeholder="Ancien mot de passe" IsPassword="True" />
+        <Entry x:Name="NewPasswordEntry" Placeholder="Nouveau mot de passe" IsPassword="True" />
+        <Entry x:Name="ConfirmPasswordEntry" Placeholder="Confirmer le nouveau mot de passe" IsPassword="True" />
+        <Button Text="Changer le mot de passe" Clicked="OnChangePasswordClicked" />
+    </StackLayout>
+</ContentPage>

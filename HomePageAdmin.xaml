@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppFinal.HomePageAdmin">
+
+    <StackLayout Padding="10">
+        <Label Text="Page d'administration" FontSize="24" HorizontalOptions="Center" />
+
+        <Picker x:Name="UserPicker" Title="Sélectionner un utilisateur" />
+        <DatePicker x:Name="StartDatePicker" />
+        <DatePicker x:Name="EndDatePicker" />
+
+        <Button Text="Imprimer" Clicked="OnPrintClicked" />
+
+        <Label x:Name="ErrorMessage" TextColor="Red" IsVisible="False" />
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppFinal.HomePage">
+    <StackLayout Padding="10">
+        <AbsoluteLayout>
+            <Image Source="profile.png"
+                   HorizontalOptions="End"
+                   VerticalOptions="Start"
+                   AbsoluteLayout.LayoutBounds="1, 0, 150, 150"
+                   AbsoluteLayout.LayoutFlags="PositionProportional">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnProfileImageTapped" />
+                </Image.GestureRecognizers>
+            </Image>
+        </AbsoluteLayout>
+
+        <BoxView HeightRequest="45" BackgroundColor="Transparent" />
+
+        <Frame CornerRadius="10" Padding="10" HasShadow="True" BackgroundColor="#ffbb31">
+            <StackLayout>
+                <Label Text="Solde Restant :"
+                       FontSize="18"
+                       HorizontalOptions="Center"
+                       TextColor="#1d409d"/>
+                <Label x:Name="BalanceLabel"
+                       FontSize="24"
+                       HorizontalOptions="Center"
+                       TextColor="#1d409d"/>
+            </StackLayout>
+        </Frame>
+
+        <ListView x:Name="TransactionsListView" ItemsSource="{Binding Transactions}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="5">
+                            <Label Text="{Binding Amount, StringFormat='Montant de la transaction : {0:C}'}" />
+                            <Label Text="{Binding TransactionDateTime, StringFormat='Date et Heure : {0:dd/MM/yyyy HH:mm:ss}'}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
